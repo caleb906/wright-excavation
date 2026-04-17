@@ -1,0 +1,1 @@
+- [Wright Excavation Site Context](project_wright_excavation.md) — Tech stack, page inventory, and pre-launch SEO gap summary for Wright Excavation Vercel deploy

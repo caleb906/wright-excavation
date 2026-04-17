@@ -1,0 +1,142 @@
+{
+  "$schema": "https://hoffmedia.dev/schema/site-v1.json",
+  "meta": {
+    "siteName": "Wright Excavation",
+    "tagline": "Central Oregon Excavation Contractor",
+    "description": "Site prep, grading, foundation excavation, trenching, and land clearing for builders and developers across Central Oregon.",
+    "phone": "(541) 555-0100",
+    "phoneLink": "+15415550100",
+    "email": "info@wrightexcavation.com",
+    "address": "Central Oregon",
+    "hours": "Mon–Fri, 7am–5pm"
+  },
+  "brand": {
+    "logo": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/699504ed2529fa33566c3560_2.png",
+    "colors": {
+      "gold": "#D4A017",
+      "goldDark": "#B8880F",
+      "black": "#0A0A0C",
+      "surface": "#111113",
+      "surface2": "#18181B",
+      "text": "#FAFAFA"
+    },
+    "fonts": {
+      "display": "Anton",
+      "body": "DM Sans"
+    }
+  },
+  "nav": [
+    { "label": "Home", "url": "/" },
+    { "label": "Services", "url": "/services" },
+    { "label": "About", "url": "/about" },
+    { "label": "Contact", "url": "/contact" }
+  ],
+  "cta": {
+    "label": "Request Estimate",
+    "url": "/estimate"
+  },
+  "pages": {
+    "home": {
+      "slug": "/",
+      "title": "Wright Excavation | Central Oregon Excavation Contractor",
+      "blocks": [
+        {
+          "type": "hero",
+          "id": "hero-1",
+          "eyebrow": "Built for Builders & Developers",
+          "heading": "Excavation That Keeps Your Schedule Intact",
+          "subheading": "Wright Excavation works directly with builders and developers across Central Oregon. Focused crews, realistic timelines, no surprises.",
+          "primaryCTA": { "label": "Request Estimate", "url": "/estimate" },
+          "secondaryCTA": { "label": "See Our Services", "url": "/services" },
+          "backgroundImage": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08daad8390f6e3632d6_DSCF0003.jpg",
+          "stats": [
+            { "value": "15+", "label": "Years Experience" },
+            { "value": "500+", "label": "Projects Completed" },
+            { "value": "100%", "label": "Licensed & Insured" }
+          ]
+        },
+        {
+          "type": "problem",
+          "id": "problem-1",
+          "eyebrow": "The Problem",
+          "heading": "The Wrong Excavation Crew Can Derail Your Entire Build",
+          "body": "One unreliable excavator pushes every trade behind you. Missed deadlines. Surprise costs. Your reputation takes the hit."
+        },
+        {
+          "type": "guide",
+          "id": "guide-1",
+          "eyebrow": "The Guide",
+          "heading": "A Different Kind of Excavation Company",
+          "body": "Most excavators juggle four jobs at once and hope for the best. We run a small, focused crew by design. One project at a time gets our full attention.",
+          "quote": "We know what it costs you when excavation runs late. So we don't.",
+          "image": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08d5110bab806592979_DSCF0021.jpg",
+          "cta": { "label": "Request Estimate", "url": "/estimate" }
+        },
+        {
+          "type": "plan",
+          "id": "plan-1",
+          "eyebrow": "How It Works",
+          "heading": "A Clear Plan. No Guesswork.",
+          "steps": [
+            { "number": "01", "title": "Submit Your Project Details", "body": "Tell us what you need and when. We respond within one business day." },
+            { "number": "02", "title": "Receive a Clear Bid & Scope", "body": "Flat-rate, itemized bid. No vague estimates. Delivered within 3–5 business days." },
+            { "number": "03", "title": "Scheduled & Executed Efficiently", "body": "One crew, one job. Your site gets prepped on time so your build stays on track." }
+          ]
+        },
+        {
+          "type": "services-grid",
+          "id": "services-1",
+          "eyebrow": "Our Services",
+          "heading": "Every Type of Excavation Work. Done In-House.",
+          "subheading": "We don't broker work out. Our crew handles every job from start to finish.",
+          "services": [
+            {
+              "title": "Site Preparation",
+              "body": "Clearing, leveling, and prepping your lot. Your project starts clean and on schedule.",
+              "image": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08daad8390f6e3632d6_DSCF0003.jpg"
+            },
+            {
+              "title": "Grading & Leveling",
+              "body": "Precise grading for proper drainage and a stable foundation. No rework needed.",
+              "image": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08ebaa2b4dabc01046e_DSCF0034.jpg"
+            },
+            {
+              "title": "Foundation Excavation",
+              "body": "Clean, accurate foundation digging. The right start for a smooth build.",
+              "image": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08d068ca8ea5b86b1f3_DSCF0076.jpg"
+            }
+          ]
+        },
+        {
+          "type": "area",
+          "id": "area-1",
+          "eyebrow": "Service Area",
+          "heading": "Proudly Serving Central Oregon",
+          "body": "Based in Bend, we run crews across Deschutes, Jefferson, and Crook counties. If you're within 60 miles of Bend, we can get to you.",
+          "tags": ["Bend", "Redmond", "Sisters", "Prineville", "Sunriver", "La Pine", "Madras", "Terrebonne"],
+          "image": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08dfb7dc180c2e4d472_DSCF0079.jpg"
+        },
+        {
+          "type": "faq",
+          "id": "faq-1",
+          "eyebrow": "FAQ",
+          "heading": "Common Questions",
+          "subheading": "Everything you need to know before you reach out.",
+          "items": [
+            { "q": "How fast can you get out for an estimate?", "a": "We respond within one business day and can typically do a site visit within 3–5 business days." },
+            { "q": "Do you work with general contractors or just homeowners?", "a": "Both. About 60% of our work is for GCs and commercial developers. The other 40% is residential homeowners." },
+            { "q": "Are you licensed and insured in Oregon?", "a": "Yes. We're Oregon CCB licensed and carry full general liability and workers' comp insurance." },
+            { "q": "What's included in a typical bid?", "a": "Our bids are itemized and flat-rate. Equipment, labor, mobilization, and disposal. No surprise line items." }
+          ]
+        },
+        {
+          "type": "cta",
+          "id": "cta-1",
+          "heading": "Ready to Keep Your Build on Schedule?",
+          "subheading": "Submit your project details and get a flat-rate bid within 3–5 business days. No vague estimates. No surprises.",
+          "button": { "label": "Request Estimate", "url": "/estimate" }
+        }
+      ]
+    }
+  }
+}

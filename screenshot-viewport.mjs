@@ -6,14 +6,10 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const screenshotDir = path.join(__dirname, 'temporary screenshots');
 
-if (!fs.existsSync(screenshotDir)) {
-  fs.mkdirSync(screenshotDir, { recursive: true });
-}
-
 const url = process.argv[2] || 'http://localhost:3000';
-const label = process.argv[3] || '';
+const label = process.argv[3] || 'viewport';
+const scrollY = parseInt(process.argv[4] || '0', 10);
 
-// Find next available number
 const existing = fs.readdirSync(screenshotDir).filter(f => f.startsWith('screenshot-'));
 let maxNum = 0;
 for (const f of existing) {
@@ -21,7 +17,7 @@ for (const f of existing) {
   if (match) maxNum = Math.max(maxNum, parseInt(match[1]));
 }
 const num = maxNum + 1;
-const filename = label ? `screenshot-${num}-${label}.png` : `screenshot-${num}.png`;
+const filename = `screenshot-${num}-${label}.png`;
 const outputPath = path.join(screenshotDir, filename);
 
 (async () => {
@@ -32,31 +28,9 @@ const outputPath = path.join(screenshotDir, filename);
   const page = await browser.newPage();
   await page.setViewport({ width: 1440, height: 900 });
   await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
-
-  // Scroll through the page to trigger IntersectionObserver reveals
-  await page.evaluate(async () => {
-    await new Promise((resolve) => {
-      let y = 0;
-      const step = 300;
-      const total = document.body.scrollHeight;
-      const timer = setInterval(() => {
-        window.scrollTo(0, y);
-        y += step;
-        if (y >= total) {
-          clearInterval(timer);
-          window.scrollTo(0, 0);
-          setTimeout(resolve, 400);
-        }
-      }, 80);
-    });
-  });
-
-  // Get full page height
-  const bodyHeight = await page.evaluate(() => document.body.scrollHeight);
-  await page.setViewport({ width: 1440, height: bodyHeight });
+  if (scrollY) await page.evaluate((y) => window.scrollTo(0, y), scrollY);
   await new Promise(r => setTimeout(r, 300));
-
-  await page.screenshot({ path: outputPath, fullPage: true });
+  await page.screenshot({ path: outputPath, fullPage: false });
   console.log(`Screenshot saved: ${outputPath}`);
   await browser.close();
 })();
