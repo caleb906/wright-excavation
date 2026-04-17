@@ -20,7 +20,7 @@
 
     /* NAV */
     .nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:calc(100% - 80px);max-width:1140px;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:72px;background:rgba(10,10,12,0.7);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border:1px solid var(--border);border-radius:20px}
-    .nav-logo{height:52px;width:auto;opacity:1}.nav-links{display:flex;align-items:center;gap:4px}
+    .nav-logo{height:44px;width:auto;opacity:1}.nav-links{display:flex;align-items:center;gap:4px}
     .nav-link{font-size:13px;font-weight:500;color:var(--text-dim);text-decoration:none;padding:8px 14px;border-radius:10px;transition:color 0.15s ease,background-color 0.15s ease}.nav-link:hover{color:var(--text);background:rgba(255,255,255,0.04)}.nav-link.active{color:var(--gold)}
     .nav-actions{display:flex;align-items:center;gap:12px}.nav-phone{font-size:13px;font-weight:500;color:var(--text-dim);text-decoration:none;transition:color 0.15s ease}.nav-phone:hover{color:var(--text)}
     .nav-cta{display:inline-flex;align-items:center;padding:9px 20px;background:var(--gold);color:var(--black);font-size:13px;font-weight:700;text-decoration:none;border-radius:12px;transition:background-color 0.2s ease,transform 0.2s var(--ease)}.nav-cta:hover{background:var(--gold-dark);transform:translateY(-1px)}
@@ -45,12 +45,13 @@
     @media(max-width:768px){.story-grid{grid-template-columns:1fr;gap:32px}}
 
     /* VALUES */
-    .values{position:relative;z-index:1;padding:100px 24px;background:var(--surface)}
-    .values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;max-width:800px;margin:0 auto;background:var(--border);border-radius:20px;overflow:hidden}
-    .value-item{background:var(--surface-2);padding:36px 32px}
-    .value-title{font-family:var(--font-display);font-size:20px;letter-spacing:0.04em;color:var(--gold);margin-bottom:10px}
-    .value-body{font-size:14px;color:var(--text-mid);line-height:1.7}
-    @media(max-width:640px){.values-grid{grid-template-columns:1fr}}
+    .values{position:relative;z-index:1;padding:72px 24px;background:var(--surface)}
+    .values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;max-width:1040px;margin:0 auto;background:var(--border);border-radius:16px;overflow:hidden}
+    .value-item{background:var(--surface-2);padding:24px 22px}
+    .value-title{font-family:var(--font-display);font-size:16px;letter-spacing:0.04em;color:var(--gold);margin-bottom:8px}
+    .value-body{font-size:13px;color:var(--text-mid);line-height:1.6}
+    @media(max-width:900px){.values-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.values-grid{grid-template-columns:1fr}}
 
     /* STATS */
     .stats{position:relative;z-index:1;padding:60px 24px;background:var(--gold)}
@@ -106,9 +107,9 @@
 
   <section class="values reveal">
     <div class="container">
-      <div style="text-align:center;margin-bottom:48px">
+      <div style="text-align:center;margin-bottom:36px">
         <div class="eyebrow">What We Stand For</div>
-        <h2 style="font-family:var(--font-display);font-size:clamp(32px,4vw,42px);letter-spacing:0.04em;line-height:1.05">Four Things We Never Compromise On</h2>
+        <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,36px);letter-spacing:0.04em;line-height:1.05">Four Things We Never Compromise On</h2>
       </div>
       <div class="values-grid">
         <div class="value-item">
