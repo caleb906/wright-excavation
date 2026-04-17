@@ -1,0 +1,8 @@
+node_modules/
+.vercel
+.DS_Store
+Thumbs.db
+temporary screenshots/
+*.log
+.env
+.env.local
