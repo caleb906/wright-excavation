@@ -6,11 +6,11 @@ Static marketing site for Wright Excavation, a Central Oregon excavation contrac
 
 | URL | File | Purpose |
 |-----|------|---------|
-| `/` | `home.html` | Homepage |
+| `/` | `index.html` | Homepage |
 | `/services` | `services.html` | Services overview |
 | `/about` | `about.html` | About & story |
 | `/contact` | `contact.html` | Contact form |
-| `/estimate` | `index.html` | Full estimate request form |
+| `/estimate` | `estimate.html` | Full estimate request form |
 | `/privacy` | `privacy.html` | Privacy policy |
 
 ## Tech Stack
@@ -47,8 +47,8 @@ Both forms currently point to a placeholder Formspree endpoint. To wire up:
 1. Sign up at [formspree.io](https://formspree.io) (free tier: 50 submissions/month)
 2. Create a new form, copy the form ID (e.g. `xyzabcde`)
 3. Replace `YOUR_FORMSPREE_ID` in:
-   - `index.html` line ~502 (estimate form)
-   - `contact.html` line ~89 (contact form)
+   - `estimate.html` (estimate form)
+   - `contact.html` (contact form)
 4. Commit and push
 
 ## Updating Content

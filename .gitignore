@@ -6,3 +6,7 @@ temporary screenshots/
 *.log
 .env
 .env.local
+
+.vercel
+screencapture-*
+Brand Assets/

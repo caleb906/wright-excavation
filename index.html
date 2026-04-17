@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Request Estimate | Wright Excavation</title>
-  <meta name="description" content="Get a flat-rate estimate from Wright Excavation. Serving builders and developers across Central Oregon. We respond within 1 business day.">
+  <title>Wright Excavation | Central Oregon Excavation Contractor</title>
+  <meta name="description" content="Site prep, grading, foundation excavation, trenching, and land clearing for builders and developers across Central Oregon.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -26,20 +26,15 @@
       --font-body: 'DM Sans', sans-serif;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: var(--font-body);
       background: var(--black);
       color: var(--text);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
-
-    /* ---- GRAIN ---- */
     body::after {
       content: '';
       position: fixed;
@@ -49,410 +44,247 @@
       opacity: 0.03;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
-
-    /* ---- AMBIENT GLOW ---- */
-    .ambient {
-      position: fixed;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      filter: blur(180px);
-      opacity: 0.08;
-      pointer-events: none;
-      z-index: 0;
-    }
+    .ambient { position: fixed; width: 600px; height: 600px; border-radius: 50%; filter: blur(180px); opacity: 0.07; pointer-events: none; z-index: 0; }
     .ambient-1 { background: var(--gold); top: -200px; right: -100px; }
-    .ambient-2 { background: #1a4a2e; bottom: -300px; left: -200px; opacity: 0.05; }
+    .ambient-2 { background: #1a4a2e; bottom: -300px; left: -200px; opacity: 0.04; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s var(--ease); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; background: var(--gold-glow);
+      border: 1px solid rgba(212,160,23,0.2); border-radius: 100px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+    }
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .section-header h2 {
+      font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px);
+      letter-spacing: 0.04em; line-height: 1.05; margin-bottom: 16px;
+    }
+    .section-header p { font-size: 17px; color: var(--text-mid); max-width: 560px; margin: 0 auto; }
 
     /* ---- NAV ---- */
     .nav {
-      position: fixed;
-      top: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: calc(100% - 80px);
-      max-width: 1140px;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 24px;
-      height: 64px;
+      position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+      width: calc(100% - 80px); max-width: 1140px; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 64px;
       background: rgba(10,10,12,0.7);
-      backdrop-filter: blur(20px) saturate(1.4);
-      -webkit-backdrop-filter: blur(20px) saturate(1.4);
-      border: 1px solid var(--border);
-      border-radius: 20px;
+      backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      border: 1px solid var(--border); border-radius: 20px;
     }
     .nav-logo { height: 36px; width: auto; opacity: 0.9; }
     .nav-links { display: flex; align-items: center; gap: 4px; }
     .nav-link {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-dim);
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 10px;
+      font-size: 13px; font-weight: 500; color: var(--text-dim);
+      text-decoration: none; padding: 8px 14px; border-radius: 10px;
       transition: color 0.15s ease, background-color 0.15s ease;
     }
     .nav-link:hover { color: var(--text); background: rgba(255,255,255,0.04); }
     .nav-link.active { color: var(--gold); }
     .nav-actions { display: flex; align-items: center; gap: 12px; }
-    .nav-phone {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-dim);
-      text-decoration: none;
-      transition: color 0.15s ease;
-    }
+    .nav-phone { font-size: 13px; font-weight: 500; color: var(--text-dim); text-decoration: none; transition: color 0.15s ease; }
     .nav-phone:hover { color: var(--text); }
     .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      padding: 9px 20px;
-      background: var(--gold);
-      color: var(--black);
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      border-radius: 12px;
+      display: inline-flex; align-items: center; padding: 9px 20px;
+      background: var(--gold); color: var(--black); font-size: 13px; font-weight: 700;
+      text-decoration: none; border-radius: 12px;
       transition: background-color 0.2s ease, transform 0.2s var(--ease);
     }
     .nav-cta:hover { background: var(--gold-dark); transform: translateY(-1px); }
-    .nav-cta:active { transform: translateY(0) scale(0.97); }
-
-    @media (max-width: 768px) {
+    @media(max-width:768px) {
       .nav { width: calc(100% - 32px); top: 8px; padding: 0 16px; height: 56px; border-radius: 16px; }
       .nav-links, .nav-phone { display: none; }
     }
 
     /* ---- HERO ---- */
     .hero {
-      position: relative;
-      padding: 160px 24px 80px;
-      text-align: center;
-      z-index: 1;
+      position: relative; z-index: 1;
+      padding: 140px 24px 0; min-height: 90vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; overflow: hidden;
     }
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      background: var(--gold-glow);
-      border: 1px solid rgba(212,160,23,0.2);
-      border-radius: 100px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 24px;
+    .hero-bg {
+      position: absolute; inset: 0; z-index: -2;
+      background: url('https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08daad8390f6e3632d6_DSCF0003.jpg') center/cover no-repeat;
     }
-    .hero-eyebrow::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--gold);
-      animation: pulse 2s ease infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(to top, var(--black) 0%, rgba(10,10,12,0.75) 40%, rgba(10,10,12,0.5) 100%);
     }
     .hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(40px, 6vw, 64px);
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      line-height: 1.0;
-      margin-bottom: 20px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: clamp(44px, 7vw, 80px);
+      letter-spacing: 0.04em; line-height: 0.95;
+      margin-bottom: 24px; max-width: 800px;
     }
     .hero-sub {
-      font-size: 17px;
-      color: var(--text-mid);
-      max-width: 520px;
-      margin: 0 auto;
-      line-height: 1.7;
+      font-size: 18px; color: var(--text-mid);
+      max-width: 540px; margin: 0 auto 36px; line-height: 1.7;
     }
-
-    /* ---- STEPS ---- */
-    .steps {
-      position: relative;
-      z-index: 1;
-      padding: 0 24px 80px;
-    }
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      max-width: 900px;
-      margin: 0 auto;
-      background: var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-    }
-    .step {
-      background: var(--surface);
-      padding: 36px 32px;
-    }
-    .step-num {
-      font-family: var(--font-display);
-      font-size: 40px;
-      color: rgba(212,160,23,0.18);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-    .step-title {
-      font-family: var(--font-display);
-      font-size: 18px;
-      letter-spacing: -0.01em;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-    .step-body {
-      font-size: 13px;
-      color: var(--text-dim);
-      line-height: 1.65;
-    }
-    @media (max-width: 768px) {
-      .steps-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ---- FORM SECTION ---- */
-    .form-section {
-      position: relative;
-      z-index: 1;
-      padding: 0 24px 100px;
-    }
-    .form-card {
-      position: relative;
-      max-width: 640px;
-      margin: 0 auto;
-      background: var(--surface-2);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 24px;
-      padding: 48px 40px;
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,0.04),
-        0 24px 80px rgba(0,0,0,0.6),
-        0 2px 4px rgba(0,0,0,0.4);
-    }
-    .form-card::before {
-      content: '';
-      position: absolute;
-      top: -1px;
-      left: 15%;
-      right: 15%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(212,160,23,0.35), transparent);
-    }
-    .form-header {
-      margin-bottom: 36px;
-    }
-    .form-header-eyebrow {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-    .form-header h2 {
-      font-family: var(--font-display);
-      font-size: 32px;
-      letter-spacing: 0.04em;
-      line-height: 1.05;
-    }
-
-    /* ---- FORM FIELDS ---- */
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .form-full { grid-column: 1 / -1; }
-    @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
-
-    .field label {
-      display: block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      margin-bottom: 8px;
-    }
-    .field label .req { color: var(--gold); margin-left: 2px; }
-
-    .field input,
-    .field select,
-    .field textarea {
-      width: 100%;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 12px;
-      padding: 14px 16px;
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 15px;
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-    }
-    .field input::placeholder,
-    .field textarea::placeholder { color: var(--text-ghost); }
-    .field input:hover,
-    .field select:hover,
-    .field textarea:hover {
-      border-color: var(--border-hover);
-      background: rgba(255,255,255,0.04);
-    }
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(212,160,23,0.1);
-      background: rgba(255,255,255,0.04);
-    }
-    .field select {
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='rgba(255,255,255,0.35)' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 6.646a.5.5 0 0 1 .708 0L8 9.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-      padding-right: 40px;
-      color-scheme: dark;
-    }
-    .field select option { background: var(--surface-2); color: var(--text); }
-    .field textarea { resize: vertical; min-height: 120px; }
-    input[type="date"] { color-scheme: dark; }
-
-    /* ---- SUBMIT ---- */
-    .submit-btn {
-      width: 100%;
-      margin-top: 8px;
-      padding: 16px 32px;
-      background: var(--gold);
-      color: var(--black);
-      font-family: var(--font-body);
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      border: none;
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      display: inline-flex; align-items: center; padding: 14px 28px;
+      background: var(--gold); color: var(--black);
+      font-size: 15px; font-weight: 700; text-decoration: none;
       border-radius: 14px;
-      cursor: pointer;
       transition: background-color 0.2s ease, transform 0.2s var(--ease), box-shadow 0.2s ease;
       box-shadow: 0 4px 20px rgba(212,160,23,0.2);
     }
-    .submit-btn:hover {
-      background: var(--gold-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(212,160,23,0.3);
+    .btn-primary:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(212,160,23,0.3); }
+    .btn-primary:active { transform: translateY(0) scale(0.97); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; padding: 14px 28px;
+      background: transparent; color: var(--text);
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.15); border-radius: 14px;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s var(--ease);
     }
-    .submit-btn:active { transform: translateY(0) scale(0.98); }
-    .submit-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
-
-    .form-legal {
-      margin-top: 16px;
-      font-size: 12px;
-      color: var(--text-ghost);
-      text-align: center;
-    }
-    .form-legal a { color: var(--text-dim); text-decoration: underline; }
-    .form-legal a:hover { color: var(--text); }
-
-    /* ---- PHONE CTA ---- */
-    .phone-section {
-      position: relative;
-      z-index: 1;
-      padding: 0 24px 100px;
-    }
-    .phone-card {
-      max-width: 640px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 48px 40px;
-      background: rgba(212,160,23,0.06);
-      border: 1px solid rgba(212,160,23,0.14);
-      border-radius: 24px;
-    }
-    .phone-card h2 {
-      font-family: var(--font-display);
-      font-size: 28px;
-      letter-spacing: 0.04em;
-      margin-bottom: 10px;
-    }
-    .phone-card p {
-      font-size: 14px;
-      color: var(--text-dim);
-      margin-bottom: 24px;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .phone-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--gold);
-      text-decoration: none;
-      transition: opacity 0.15s ease;
-    }
-    .phone-link:hover { opacity: 0.8; }
-    .phone-link svg { width: 20px; height: 20px; }
-    .phone-hours { font-size: 12px; color: var(--text-ghost); margin-top: 10px; }
-
-    /* ---- FOOTER ---- */
-    .footer {
-      padding: 40px 24px;
+    .btn-ghost:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.3); transform: translateY(-1px); }
+    .hero-stats {
+      display: flex; gap: 48px; margin-top: 60px; padding-top: 40px;
       border-top: 1px solid var(--border);
     }
-    .footer-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
+    .hero-stat { text-align: center; }
+    .hero-stat-num { font-family: var(--font-display); font-size: 36px; letter-spacing: 0.04em; color: var(--text); }
+    .hero-stat-label { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+    @media(max-width:640px) { .hero-stats { gap: 24px; } .hero-stat-num { font-size: 28px; } }
+
+    /* ---- PROBLEM ---- */
+    .problem { position: relative; z-index: 1; padding: 100px 24px; background: var(--surface); }
+    .problem-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .problem h2 {
+      font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px);
+      letter-spacing: 0.04em; line-height: 1.05; margin-bottom: 20px;
     }
+    .problem h2 em { font-style: italic; color: var(--gold); }
+    .problem p { font-size: 17px; color: var(--text-mid); max-width: 600px; margin: 0 auto; }
+
+    /* ---- GUIDE ---- */
+    .guide { position: relative; z-index: 1; padding: 100px 24px; }
+    .guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; max-width: 1040px; margin: 0 auto; align-items: center; }
+    .guide-img {
+      border-radius: 16px; overflow: hidden; position: relative;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    }
+    .guide-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .guide-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,10,12,0.4) 0%, transparent 50%);
+    }
+    .guide-content h2 {
+      font-family: var(--font-display); font-size: 36px;
+      letter-spacing: 0.04em; line-height: 1.05; margin-bottom: 20px;
+    }
+    .guide-content p { font-size: 16px; color: var(--text-mid); margin-bottom: 24px; }
+    .guide-quote {
+      padding: 20px 24px; background: var(--gold);
+      border-radius: 12px; color: var(--black);
+      font-size: 16px; font-weight: 600; font-style: italic; line-height: 1.5;
+    }
+    .guide-cta { margin-top: 32px; }
+    @media(max-width:768px) {
+      .guide-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* ---- PLAN ---- */
+    .plan { position: relative; z-index: 1; padding: 100px 24px; background: var(--surface); }
+    .plan-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; max-width: 900px; margin: 0 auto;
+      background: var(--border); border-radius: 20px; overflow: hidden;
+    }
+    .plan-step { background: var(--surface-2); padding: 36px 32px; }
+    .plan-step-num { font-family: var(--font-display); font-size: 40px; color: rgba(212,160,23,0.18); line-height: 1; margin-bottom: 16px; }
+    .plan-step-title { font-family: var(--font-display); font-size: 18px; margin-bottom: 8px; }
+    .plan-step-body { font-size: 13px; color: var(--text-dim); line-height: 1.65; }
+    @media(max-width:768px) { .plan-grid { grid-template-columns: 1fr; } }
+
+    /* ---- SERVICES ---- */
+    .services { position: relative; z-index: 1; padding: 100px 24px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1040px; margin: 0 auto; }
+    .service-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+      transition: transform 0.25s var(--ease), border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px); border-color: var(--border-hover);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    }
+    .service-card-img { position: relative; height: 200px; overflow: hidden; }
+    .service-card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .service-card-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);
+    }
+    .service-card-body { padding: 24px; }
+    .service-card-title { font-family: var(--font-display); font-size: 20px; letter-spacing: 0.04em; margin-bottom: 8px; }
+    .service-card-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+    @media(max-width:768px) { .services-grid { grid-template-columns: 1fr; } }
+
+    /* ---- AREA ---- */
+    .area { position: relative; z-index: 1; padding: 100px 24px; background: var(--surface); }
+    .area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; max-width: 1040px; margin: 0 auto; align-items: center; }
+    .area-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .area-tag {
+      padding: 6px 16px; border-radius: 999px;
+      font-size: 13px; font-weight: 600; color: var(--gold);
+      background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2);
+    }
+    .area-img { border-radius: 16px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.5); }
+    .area-img img { width: 100%; height: 400px; object-fit: cover; display: block; }
+    @media(max-width:768px) { .area-grid { grid-template-columns: 1fr; } }
+
+    /* ---- FAQ ---- */
+    .faq { position: relative; z-index: 1; padding: 100px 24px; }
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; transition: border-color 0.15s ease; }
+    .faq-item:hover { border-color: rgba(212,160,23,0.2); }
+    .faq-q { font-size: 17px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+    .faq-a { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
+
+    /* ---- CTA ---- */
+    .cta {
+      position: relative; z-index: 1; padding: 80px 24px;
+      background: var(--gold); text-align: center;
+    }
+    .cta h2 {
+      font-family: var(--font-display); font-size: clamp(32px, 5vw, 52px);
+      letter-spacing: 0.04em; line-height: 1.0; color: var(--black); margin-bottom: 16px;
+    }
+    .cta p { font-size: 17px; color: rgba(0,0,0,0.55); max-width: 520px; margin: 0 auto 32px; }
+    .btn-dark {
+      display: inline-flex; align-items: center; padding: 16px 36px;
+      background: var(--black); color: var(--gold);
+      font-size: 16px; font-weight: 700; text-decoration: none;
+      border-radius: 999px;
+      transition: background-color 0.2s ease, transform 0.2s var(--ease), box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .btn-dark:hover { background: #1a1a1d; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+
+    /* ---- FOOTER ---- */
+    .footer { padding: 40px 24px; border-top: 1px solid var(--border); }
+    .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
     .footer-left { display: flex; align-items: center; gap: 12px; }
     .footer-logo { height: 28px; opacity: 0.5; }
     .footer-copy { font-size: 11px; color: var(--text-ghost); }
     .footer-links { display: flex; gap: 20px; }
-    .footer-link {
-      font-size: 12px;
-      color: var(--text-dim);
-      text-decoration: none;
-      transition: color 0.15s ease;
-    }
+    .footer-link { font-size: 12px; color: var(--text-dim); text-decoration: none; transition: color 0.15s ease; }
     .footer-link:hover { color: var(--text); }
-
-    /* ---- SCROLL REVEAL ---- */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.7s ease, transform 0.7s var(--ease);
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-d1 { transition-delay: 0.1s; }
-    .reveal-d2 { transition-delay: 0.2s; }
-    .reveal-d3 { transition-delay: 0.3s; }
   </style>
 </head>
 <body>
-
-  <!-- Ambient glow -->
   <div class="ambient ambient-1"></div>
   <div class="ambient ambient-2"></div>
 
   <!-- NAV -->
   <nav class="nav">
-    <a href="/">
-      <img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/699504ed2529fa33566c3560_2.png" alt="Wright Excavation logo" class="nav-logo">
-    </a>
+    <a href="/"><img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/699504ed2529fa33566c3560_2.png" alt="Wright Excavation logo" class="nav-logo"></a>
     <div class="nav-links">
-      <a href="/" class="nav-link">Home</a>
+      <a href="/" class="nav-link active">Home</a>
       <a href="/services" class="nav-link">Services</a>
       <a href="/about" class="nav-link">About</a>
       <a href="/contact" class="nav-link">Contact</a>
@@ -464,106 +296,180 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero reveal">
-    <div class="hero-eyebrow">Request a Free Estimate</div>
-    <h1>Tell Us About Your Project</h1>
-    <p class="hero-sub">Submit your details and get a flat-rate, itemized bid within 3–5 business days. No vague estimates. No surprises.</p>
-  </section>
-
-  <!-- STEPS -->
-  <section class="steps reveal">
-    <div class="steps-grid">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-title">Submit Your Details</div>
-        <p class="step-body">Fill out the form below with your project info. Takes about 2 minutes.</p>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="eyebrow">Built for Builders & Developers</div>
+    <h1>Excavation That Keeps Your Schedule Intact</h1>
+    <p class="hero-sub">Wright Excavation works directly with builders and developers across Central Oregon. Focused crews, realistic timelines, no surprises.</p>
+    <div class="hero-actions">
+      <a href="/estimate" class="btn-primary">Request Estimate</a>
+      <a href="/services" class="btn-ghost">See Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">15+</div>
+        <div class="hero-stat-label">Years Experience</div>
       </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-title">We Follow Up</div>
-        <p class="step-body">Our team responds within 1 business day to confirm details or schedule a site visit.</p>
+      <div class="hero-stat">
+        <div class="hero-stat-num">500+</div>
+        <div class="hero-stat-label">Projects Completed</div>
       </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-title">Get Your Bid</div>
-        <p class="step-body">Receive a clear, flat-rate bid within 3–5 business days. No hidden fees.</p>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Licensed & Insured</div>
       </div>
     </div>
   </section>
 
-  <!-- FORM -->
-  <section class="form-section reveal">
-    <div class="form-card">
-      <div class="form-header">
-        <div class="form-header-eyebrow">Estimate Request Form</div>
-        <h2>Tell Us About Your Project</h2>
-      </div>
+  <!-- PROBLEM -->
+  <section class="problem reveal">
+    <div class="problem-inner">
+      <div class="eyebrow">The Problem</div>
+      <h2>The <em>Wrong</em> Excavation Crew Can Derail Your Entire Build</h2>
+      <p>One unreliable excavator pushes every trade behind you. Missed deadlines. Surprise costs. Your reputation takes the hit.</p>
+    </div>
+  </section>
 
-      <form method="post" action="https://formspree.io/f/YOUR_FORMSPREE_ID" data-form="estimate">
-        <div class="form-grid">
-          <div class="field">
-            <label for="name">Full Name <span class="req">*</span></label>
-            <input type="text" id="name" name="full-name" placeholder="John Wright" required>
-          </div>
-          <div class="field">
-            <label for="email">Email <span class="req">*</span></label>
-            <input type="email" id="email" name="email" placeholder="john@wrightbuilders.com" required>
-          </div>
-          <div class="field">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company" placeholder="Wright Builders LLC">
-          </div>
-          <div class="field">
-            <label for="phone">Phone <span class="req">*</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="(541) 555-0100" required>
-          </div>
-          <div class="field">
-            <label for="service">Service Needed <span class="req">*</span></label>
-            <select id="service" name="service" required>
-              <option value="" disabled selected>Select a service</option>
-              <option value="site-prep">Site Preparation</option>
-              <option value="grading">Grading & Leveling</option>
-              <option value="trenching">Trenching & Utilities</option>
-              <option value="clearing">Land Clearing</option>
-              <option value="foundation">Foundation Excavation</option>
-              <option value="drainage">Drainage Solutions</option>
-              <option value="haul">Haul & Dump</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="date">Desired Start Date</label>
-            <input type="date" id="date" name="start-date">
-          </div>
-          <div class="field form-full">
-            <label for="address">Project Address <span class="req">*</span></label>
-            <input type="text" id="address" name="address" placeholder="123 Project Site Rd, Bend, OR" required>
-          </div>
-          <div class="field form-full">
-            <label for="notes">Project Notes</label>
-            <textarea id="notes" name="notes" rows="5" placeholder="Describe your project — lot size, scope of work, access conditions, timeline constraints..."></textarea>
-          </div>
-          <div class="form-full">
-            <button type="submit" class="submit-btn">Submit Request</button>
+  <!-- GUIDE -->
+  <section class="guide reveal">
+    <div class="guide-grid">
+      <div class="guide-img">
+        <img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08d5110bab806592979_DSCF0021.jpg" alt="Wright Excavation owner on job site">
+      </div>
+      <div class="guide-content">
+        <div class="eyebrow">The Guide</div>
+        <h2>A Different Kind of Excavation Company</h2>
+        <p>Most excavators juggle four jobs at once and hope for the best. We run a small, focused crew by design. One project at a time gets our full attention — which means fewer surprises and a site that's actually ready when your framing crew shows up.</p>
+        <div class="guide-quote">"We know what it costs you when excavation runs late. So we don't."</div>
+        <div class="guide-cta"><a href="/estimate" class="btn-primary">Request Estimate</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAN -->
+  <section class="plan reveal">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">How It Works</div>
+        <h2>A Clear Plan. No Guesswork.</h2>
+      </div>
+      <div class="plan-grid">
+        <div class="plan-step">
+          <div class="plan-step-num">01</div>
+          <div class="plan-step-title">Submit Your Project Details</div>
+          <p class="plan-step-body">Tell us what you need and when. We respond within one business day.</p>
+        </div>
+        <div class="plan-step">
+          <div class="plan-step-num">02</div>
+          <div class="plan-step-title">Receive a Clear Bid & Scope</div>
+          <p class="plan-step-body">Flat-rate, itemized bid. No vague estimates. Delivered within 3–5 business days.</p>
+        </div>
+        <div class="plan-step">
+          <div class="plan-step-num">03</div>
+          <div class="plan-step-title">Scheduled & Executed Efficiently</div>
+          <p class="plan-step-body">One crew, one job. Your site gets prepped on time so your build stays on track.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services reveal">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Our Services</div>
+        <h2>Every Type of Excavation Work. Done In-House.</h2>
+        <p>We don't broker work out. Our crew handles every job from start to finish — so you always know who's responsible.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card-img"><img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08daad8390f6e3632d6_DSCF0003.jpg" alt="Site preparation and land clearing"></div>
+          <div class="service-card-body">
+            <div class="service-card-title">Site Preparation</div>
+            <p class="service-card-desc">Clearing, leveling, and prepping your lot. Your project starts clean and on schedule.</p>
           </div>
         </div>
-      </form>
-
-      <p class="form-legal">By submitting, you agree to our <a href="/privacy">Privacy Policy</a>. We respond within 1 business day.</p>
+        <div class="service-card">
+          <div class="service-card-img"><img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08ebaa2b4dabc01046e_DSCF0034.jpg" alt="Precision grading and leveling"></div>
+          <div class="service-card-body">
+            <div class="service-card-title">Grading & Leveling</div>
+            <p class="service-card-desc">Precise grading for proper drainage and a stable foundation. No rework needed.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-img"><img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08d068ca8ea5b86b1f3_DSCF0076.jpg" alt="Foundation excavation for builds"></div>
+          <div class="service-card-body">
+            <div class="service-card-title">Foundation Excavation</div>
+            <p class="service-card-desc">Clean, accurate foundation digging. The right start for a smooth build.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PREFER TO CALL -->
-  <section class="phone-section reveal">
-    <div class="phone-card">
-      <h2>Prefer to Talk?</h2>
-      <p>For urgent timelines or if you'd rather walk through your project over the phone.</p>
-      <a href="tel:+15415550100" class="phone-link">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        (541) 555-0100
-      </a>
-      <p class="phone-hours">Mon–Fri, 7am–5pm</p>
+  <!-- SERVICE AREA -->
+  <section class="area reveal">
+    <div class="area-grid">
+      <div>
+        <div class="eyebrow">Service Area</div>
+        <h2 style="font-family:var(--font-display);font-size:36px;letter-spacing:-0.03em;line-height:1.05;margin-bottom:16px">Proudly Serving Central Oregon</h2>
+        <p style="font-size:16px;color:var(--text-mid)">Based in Bend, we run crews across Deschutes, Jefferson, and Crook counties. If you're within 60 miles of Bend, we can get to you.</p>
+        <div class="area-tags">
+          <span class="area-tag">Bend</span>
+          <span class="area-tag">Redmond</span>
+          <span class="area-tag">Sisters</span>
+          <span class="area-tag">Prineville</span>
+          <span class="area-tag">Sunriver</span>
+          <span class="area-tag">La Pine</span>
+          <span class="area-tag">Madras</span>
+          <span class="area-tag">Terrebonne</span>
+        </div>
+      </div>
+      <div class="area-img">
+        <img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08dfb7dc180c2e4d472_DSCF0079.jpg" alt="Central Oregon landscape">
+      </div>
     </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq reveal">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">FAQ</div>
+        <h2>Common Questions</h2>
+        <p>Everything you need to know before you reach out.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">How fast can you get out for an estimate?</div>
+          <p class="faq-a">We respond within one business day and can typically do a site visit within 3–5 business days. For urgent timelines, call us directly.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you work with general contractors or just homeowners?</div>
+          <p class="faq-a">Both. About 60% of our work is for GCs and commercial developers. The other 40% is residential homeowners.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Are you licensed and insured in Oregon?</div>
+          <p class="faq-a">Yes. We're Oregon CCB licensed and carry full general liability and workers' comp insurance.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What's included in a typical bid?</div>
+          <p class="faq-a">Our bids are itemized and flat-rate. We include equipment, labor, mobilization, and disposal. No surprise line items.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What areas do you serve?</div>
+          <p class="faq-a">Bend, Redmond, Sisters, Prineville, Sunriver, La Pine, Madras, Terrebonne, and surrounding Central Oregon communities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta reveal">
+    <h2>Ready to Keep Your Build on Schedule?</h2>
+    <p>Submit your project details and get a flat-rate bid within 3–5 business days. No vague estimates. No surprises.</p>
+    <a href="/estimate" class="btn-dark">Request Estimate</a>
   </section>
 
   <!-- FOOTER -->
@@ -584,12 +490,10 @@
   </footer>
 
   <script>
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
+    const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   </script>
-
 </body>
 </html>

@@ -1,13 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/", "destination": "/home.html" },
-    { "source": "/estimate", "destination": "/index.html" }
-  ],
-  "redirects": [
-    { "source": "/index", "destination": "/estimate", "permanent": true }
-  ],
   "headers": [
     {
       "source": "/(.*)",
