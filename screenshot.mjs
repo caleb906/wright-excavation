@@ -12,6 +12,8 @@ if (!fs.existsSync(screenshotDir)) {
 
 const url = process.argv[2] || 'http://localhost:3000';
 const label = process.argv[3] || '';
+const isMobile = process.argv.includes('--mobile');
+const width = isMobile ? 390 : 1440;
 
 // Find next available number
 const existing = fs.readdirSync(screenshotDir).filter(f => f.startsWith('screenshot-'));
@@ -30,8 +32,11 @@ const outputPath = path.join(screenshotDir, filename);
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
   const page = await browser.newPage();
-  await page.setViewport({ width: 1440, height: 900 });
+  await page.setViewport({ width, height: 900 });
   await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+
+  // Hide dev-toolbar overlay so it doesn't obscure footer in screenshots
+  await page.addStyleTag({ content: '#hm-dev-toolbar, #hm-toggle { display: none !important; }' });
 
   // Scroll through the page to trigger IntersectionObserver reveals
   await page.evaluate(async () => {
@@ -53,7 +58,7 @@ const outputPath = path.join(screenshotDir, filename);
 
   // Get full page height
   const bodyHeight = await page.evaluate(() => document.body.scrollHeight);
-  await page.setViewport({ width: 1440, height: bodyHeight });
+  await page.setViewport({ width, height: bodyHeight });
   await new Promise(r => setTimeout(r, 300));
 
   await page.screenshot({ path: outputPath, fullPage: true });
