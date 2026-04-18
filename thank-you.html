@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Wright Excavation</title>
-  <meta name="description" content="15+ years of excavation experience, 500+ projects completed across Central Oregon. Oregon CCB licensed. One focused crew, one job at a time.">
-  <link rel="canonical" href="https://wrightexcavation.com/about">
+  <title>Thank You | Wright Excavation</title>
+  <meta name="description" content="Thanks for reaching out to Wright Excavation. We've received your request and will respond within 1 business day.">
+  <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   <style>
     :root{--gold:#D4A017;--gold-dark:#B8880F;--gold-glow:rgba(212,160,23,0.15);--black:#0A0A0C;--surface:#111113;--surface-2:#18181B;--border:rgba(255,255,255,0.07);--border-hover:rgba(255,255,255,0.14);--text:#FAFAFA;--text-mid:rgba(255,255,255,0.65);--text-dim:rgba(255,255,255,0.40);--text-ghost:rgba(255,255,255,0.30);--font-display:'Anton',sans-serif;--font-body:'DM Sans',sans-serif;--ease:cubic-bezier(0.22,1,0.36,1)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:var(--font-body);background:var(--black);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    body{font-family:var(--font-body);background:var(--black);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
     body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-    .ambient{position:fixed;width:600px;height:600px;border-radius:50%;filter:blur(180px);opacity:0.07;pointer-events:none;z-index:0}.ambient-1{background:var(--gold);top:-200px;right:-100px}.ambient-2{background:#1a4a2e;bottom:-300px;left:-200px;opacity:0.04}
-    .container{max-width:1140px;margin:0 auto;padding:0 24px}
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s var(--ease)}.reveal.visible{opacity:1;transform:translateY(0)}
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:var(--gold-glow);border:1px solid rgba(212,160,23,0.2);border-radius:100px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+    .ambient{position:fixed;width:600px;height:600px;border-radius:50%;filter:blur(180px);opacity:0.08;pointer-events:none;z-index:0}
+    .ambient-1{background:var(--gold);top:-200px;right:-100px}
+    .ambient-2{background:#1a4a2e;bottom:-300px;left:-200px;opacity:0.05}
 
     /* ---- NAV ---- */
     .nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:calc(100% - 80px);max-width:1140px;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:136px;background:rgba(10,10,12,0.7);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border:1px solid var(--border);border-radius:20px}
@@ -32,57 +31,64 @@
     .nav-cta{display:inline-flex;align-items:center;padding:14px 28px;background:var(--gold);color:var(--black);font-size:16px;font-weight:700;text-decoration:none;border-radius:14px;transition:background-color 0.2s ease,transform 0.2s var(--ease)}
     .nav-cta:hover{background:var(--gold-dark);transform:translateY(-1px)}
 
-    /* HERO */
-    .hero{position:relative;z-index:1;padding:220px 24px 80px;text-align:center;min-height:55vh;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden}
-    .hero-bg{position:absolute;inset:0;z-index:-2;background:url('https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08d5110bab806592979_DSCF0021.jpg') center/cover no-repeat}
-    .hero-overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,var(--black) 0%,rgba(10,10,12,0.75) 40%,rgba(10,10,12,0.5) 100%)}
-    .hero h1{font-family:var(--font-display);font-size:clamp(40px,6vw,72px);letter-spacing:0.04em;line-height:0.95;margin-bottom:20px}
-    .hero-sub{font-size:17px;color:var(--text-mid);max-width:520px;margin:0 auto}
+    /* ---- HERO ---- */
+    .hero{position:relative;padding:200px 24px 60px;text-align:center;z-index:1}
 
-    /* STORY */
-    .story{position:relative;z-index:1;padding:100px 24px}
-    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1040px;margin:0 auto;align-items:center}
-    .story-img{border-radius:16px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.5)}
-    .story-img img{width:100%;height:100%;object-fit:cover;display:block}
-    .story-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,12,0.3) 0%,transparent 50%)}
-    .story-content h2{font-family:var(--font-display);font-size:36px;letter-spacing:0.04em;line-height:1.05;margin-bottom:20px}
-    .story-content p{font-size:16px;color:var(--text-mid);margin-bottom:20px}
-    .quote-block{padding:20px 24px;background:var(--gold);border-radius:12px;color:var(--black);font-size:16px;font-weight:600;font-style:italic;line-height:1.5;margin-top:8px}
-    @media(max-width:768px){.story-grid{grid-template-columns:1fr;gap:32px}}
+    /* Confirmation badge with concentric pulse rings */
+    .badge{position:relative;width:120px;height:120px;margin:0 auto 32px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(212,160,23,0.28),rgba(212,160,23,0.06) 70%);border:1px solid rgba(212,160,23,0.35);box-shadow:0 0 0 1px rgba(212,160,23,0.1) inset,0 12px 40px rgba(212,160,23,0.18),0 0 60px rgba(212,160,23,0.12)}
+    .badge::before,.badge::after{content:'';position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold);opacity:0;transform:scale(1)}
+    .badge::before{animation:ring 2.6s cubic-bezier(0.22,1,0.36,1) infinite}
+    .badge::after{animation:ring 2.6s cubic-bezier(0.22,1,0.36,1) infinite;animation-delay:1.3s}
+    @keyframes ring{0%{opacity:0.5;transform:scale(1)}100%{opacity:0;transform:scale(1.6)}}
+    .badge svg{width:48px;height:48px;color:var(--gold);position:relative;z-index:1;stroke-dasharray:100;stroke-dashoffset:100;animation:check 0.7s cubic-bezier(0.22,1,0.36,1) 0.2s forwards}
+    @keyframes check{to{stroke-dashoffset:0}}
 
-    /* VALUES */
-    .values{position:relative;z-index:1;padding:80px 24px;background:var(--black)}
-    .values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1140px;margin:0 auto}
-    .value-item{background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:28px 24px;transition:border-color 0.2s ease,transform 0.2s var(--ease)}
-    .value-item:hover{border-color:rgba(212,160,23,0.35);transform:translateY(-2px)}
-    .value-title{font-family:var(--font-display);font-size:18px;letter-spacing:0.04em;color:var(--gold);margin-bottom:10px}
-    .value-body{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.6}
-    /* STATS */
-    .stats{position:relative;z-index:1;padding:80px 24px;background:var(--gold)}
-    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1040px;margin:0 auto}
-    .stat{text-align:center;padding:12px 8px;position:relative}
-    .stat:not(:last-child)::after{content:'';position:absolute;right:-16px;top:20%;bottom:20%;width:1px;background:rgba(0,0,0,0.15)}
-    .stat-num{font-family:var(--font-display);font-size:clamp(48px,5vw,68px);letter-spacing:0.04em;color:var(--black);line-height:1}
-    .stat-label{font-size:12px;color:rgba(0,0,0,0.65);margin-top:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em}
-    @media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:24px}.stat:not(:last-child)::after{display:none}}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:var(--gold-glow);border:1px solid rgba(212,160,23,0.2);border-radius:100px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+    .hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s ease infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
 
-    /* TOOLS */
-    .tools{position:relative;z-index:1;padding:100px 24px;background:var(--black)}
-    .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1040px;margin:0 auto}
-    .tool-card{background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:32px 28px;transition:border-color 0.2s ease,transform 0.2s var(--ease)}
-    .tool-card:hover{border-color:rgba(212,160,23,0.35);transform:translateY(-2px)}
-    .tool-icon{width:44px;height:44px;border-radius:12px;background:rgba(212,160,23,0.12);color:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-    .tool-icon svg{width:22px;height:22px;stroke-width:2}
-    .tool-title{font-family:var(--font-display);font-size:22px;letter-spacing:0.03em;color:var(--text);margin-bottom:10px;line-height:1.1}
-    .tool-body{font-size:14px;color:var(--text-mid);line-height:1.7}
-    @media(max-width:768px){.tools-grid{grid-template-columns:1fr}}
+    .hero h1{font-family:var(--font-display);font-size:clamp(48px,8vw,84px);font-weight:400;letter-spacing:0.04em;line-height:0.95;margin-bottom:24px;max-width:800px;margin-left:auto;margin-right:auto}
+    .hero h1 .accent{color:var(--gold);display:block}
+    .hero-sub{font-size:18px;color:var(--text-mid);max-width:540px;margin:0 auto;line-height:1.65}
+    .hero-sub strong{color:var(--text);font-weight:600}
 
-    /* CTA */
-    .cta{position:relative;z-index:1;padding:80px 24px;background:var(--gold);text-align:center}
-    .cta h2{font-family:var(--font-display);font-size:clamp(32px,5vw,52px);letter-spacing:0.04em;line-height:1.0;color:var(--black);margin-bottom:16px}
-    .cta p{font-size:17px;color:rgba(0,0,0,0.55);max-width:520px;margin:0 auto 32px}
-    .btn-dark{display:inline-flex;align-items:center;padding:16px 36px;background:var(--black);color:var(--gold);font-size:16px;font-weight:700;text-decoration:none;border-radius:999px;transition:background-color 0.2s ease,transform 0.2s var(--ease),box-shadow 0.2s ease;box-shadow:0 4px 20px rgba(0,0,0,0.3)}.btn-dark:hover{background:#1a1a1d;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.4)}
-    .btn-primary{display:inline-flex;align-items:center;padding:14px 28px;background:var(--gold);color:var(--black);font-size:15px;font-weight:700;text-decoration:none;border-radius:14px;transition:background-color 0.2s ease,transform 0.2s var(--ease),box-shadow 0.2s ease;box-shadow:0 4px 20px rgba(212,160,23,0.2)}.btn-primary:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 8px 30px rgba(212,160,23,0.3)}
+    /* ---- WHAT'S NEXT ---- */
+    .next{position:relative;z-index:1;padding:0 24px 80px}
+    .next-inner{max-width:900px;margin:0 auto}
+    .next-header{text-align:center;margin-bottom:40px}
+    .next-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+    .next-title{font-family:var(--font-display);font-size:clamp(28px,4vw,40px);letter-spacing:0.04em;line-height:1.05}
+    .next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:20px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.5)}
+    .next-step{background:var(--surface);padding:36px 32px;position:relative;transition:background 0.3s ease}
+    .next-step:hover{background:#13131a}
+    .next-step-num{font-family:var(--font-display);font-size:44px;color:rgba(212,160,23,0.22);line-height:1;margin-bottom:18px;letter-spacing:0.02em}
+    .next-step-title{font-family:var(--font-display);font-size:18px;letter-spacing:0.02em;margin-bottom:10px;color:var(--text)}
+    .next-step-body{font-size:13px;color:var(--text-dim);line-height:1.7}
+    .next-step-time{display:inline-block;margin-top:14px;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);padding:4px 10px;background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.18);border-radius:100px}
+    @media(max-width:768px){.next-grid{grid-template-columns:1fr}}
+
+    /* ---- TWO-COLUMN: PHONE + ACTIONS ---- */
+    .followup{position:relative;z-index:1;padding:0 24px 80px}
+    .followup-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;max-width:900px;margin:0 auto}
+    @media(max-width:768px){.followup-grid{grid-template-columns:1fr}}
+
+    .phone-card{padding:40px 36px;background:linear-gradient(155deg,rgba(212,160,23,0.10),rgba(212,160,23,0.03) 60%);border:1px solid rgba(212,160,23,0.18);border-radius:24px;position:relative;overflow:hidden}
+    .phone-card::before{content:'';position:absolute;top:-1px;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,160,23,0.5),transparent)}
+    .phone-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+    .phone-card h3{font-family:var(--font-display);font-size:26px;letter-spacing:0.03em;line-height:1.1;margin-bottom:12px}
+    .phone-card p{font-size:14px;color:var(--text-mid);margin-bottom:22px;max-width:340px}
+    .phone-link{display:inline-flex;align-items:center;gap:12px;padding:14px 22px;background:var(--gold);color:var(--black);font-size:16px;font-weight:700;text-decoration:none;border-radius:14px;transition:background-color 0.2s ease,transform 0.2s var(--ease),box-shadow 0.2s ease;box-shadow:0 6px 24px rgba(212,160,23,0.25)}
+    .phone-link:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 10px 32px rgba(212,160,23,0.35)}
+    .phone-link svg{width:18px;height:18px;stroke-width:2.2}
+    .phone-hours{margin-top:14px;font-size:12px;color:var(--text-ghost);letter-spacing:0.04em}
+
+    .actions-card{padding:40px 36px;background:var(--surface-2);border:1px solid rgba(255,255,255,0.08);border-radius:24px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 0 0 1px rgba(255,255,255,0.04),0 24px 80px rgba(0,0,0,0.5)}
+    .actions-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);margin-bottom:14px}
+    .action-link{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--border);color:var(--text);text-decoration:none;font-size:15px;font-weight:500;transition:color 0.15s ease,padding 0.2s ease}
+    .action-link:last-child{border-bottom:none}
+    .action-link:hover{color:var(--gold);padding-left:6px}
+    .action-link svg{width:16px;height:16px;color:var(--text-dim);transition:transform 0.2s var(--ease),color 0.15s ease}
+    .action-link:hover svg{color:var(--gold);transform:translateX(4px)}
 
     /* ---- FOOTER ---- */
     .footer{padding:72px 24px 28px;border-top:1px solid var(--border);background:var(--surface);position:relative;z-index:1}
@@ -104,7 +110,15 @@
     .footer-credit a{color:var(--gold);text-decoration:none;font-weight:600;transition:color 0.15s ease}
     .footer-credit a:hover{color:var(--text)}
     @media(max-width:768px){.footer{padding:56px 24px 24px}.footer-inner{grid-template-columns:1fr;gap:40px}.footer-nav-wrap{grid-template-columns:1fr 1fr;gap:24px}.footer-bar{flex-direction:column;text-align:center;gap:8px}}
-  /* ---- BURGER ---- */
+
+    /* ---- REVEAL ---- */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s var(--ease)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .reveal-d1{transition-delay:0.08s}
+    .reveal-d2{transition-delay:0.16s}
+    .reveal-d3{transition-delay:0.24s}
+
+    /* ---- BURGER ---- */
     .nav-burger{width:48px;height:48px;display:none;align-items:center;justify-content:center;background:transparent;border:none;cursor:pointer;color:var(--text);padding:0;position:relative}
     .nav-burger-bars{display:flex;flex-direction:column;gap:5px}
     .nav-burger-bars span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:transform 0.3s cubic-bezier(0.22,1,0.36,1),opacity 0.2s ease}
@@ -161,20 +175,33 @@
       .nav-logo{height:120px}
       .nav-links,.nav-phone,.nav-cta,.nav-actions{display:none}
       .nav-burger{display:inline-flex;position:absolute;right:12px;top:50%;transform:translateY(-50%)}
+      .hero{padding:180px 24px 50px}
+      .badge{width:100px;height:100px;margin-bottom:28px}
+      .badge svg{width:40px;height:40px}
     }
   </style>
 </head>
 <body>
+
   <div class="ambient ambient-1"></div>
   <div class="ambient ambient-2"></div>
 
+  <!-- NAV -->
   <nav class="nav">
     <a href="/"><img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/699504ed2529fa33566c3560_2.png" alt="Wright Excavation logo" class="nav-logo"></a>
-    <div class="nav-links"><a href="/" class="nav-link">Home</a><a href="/services" class="nav-link">Services</a><a href="/about" class="nav-link active">About</a><a href="/contact" class="nav-link">Contact</a></div>
-    <div class="nav-actions"><a href="tel:+15414103633" class="nav-phone">(541) 410-3633</a><a href="/estimate" class="nav-cta">Request Estimate</a></div>
-      
-      <button class="nav-burger" aria-label="Open menu" onclick="openMenu()"><span class="nav-burger-bars"><span></span><span></span><span></span></span></button>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/services" class="nav-link">Services</a>
+      <a href="/about" class="nav-link">About</a>
+      <a href="/contact" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="tel:+15414103633" class="nav-phone">(541) 410-3633</a>
+      <a href="/estimate" class="nav-cta">Request Estimate</a>
+    </div>
+    <button class="nav-burger" aria-label="Open menu" onclick="openMenu()"><span class="nav-burger-bars"><span></span><span></span><span></span></span></button>
   </nav>
+
   <!-- MOBILE MENU -->
   <div class="menu" id="mobileMenu">
     <div class="menu-top">
@@ -184,7 +211,7 @@
     <nav class="menu-nav">
       <a href="/" class="menu-link"><span class="menu-link-num">01</span>Home<span class="menu-link-arrow"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       <a href="/services" class="menu-link"><span class="menu-link-num">02</span>Services<span class="menu-link-arrow"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-      <a href="/about" class="menu-link active"><span class="menu-link-num">03</span>About<span class="menu-link-arrow"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a href="/about" class="menu-link"><span class="menu-link-num">03</span>About<span class="menu-link-arrow"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       <a href="/contact" class="menu-link"><span class="menu-link-num">04</span>Contact<span class="menu-link-arrow"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </nav>
     <div class="menu-footer">
@@ -197,102 +224,80 @@
     </div>
   </div>
   <script>function openMenu(){document.getElementById('mobileMenu').classList.add('open');document.body.classList.add('menu-open')}function closeMenu(){document.getElementById('mobileMenu').classList.remove('open');document.body.classList.remove('menu-open')}</script>
-  
 
-
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="eyebrow">Our Story</div>
-    <h1>About Wright Excavation</h1>
-    <p class="hero-sub">15+ years serving Central Oregon builders with focused, reliable excavation.</p>
-  </section>
-
-  <section class="story reveal">
-    <div class="story-grid">
-      <div class="story-img">
-        <img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08d5110bab806592979_DSCF0021.jpg" alt="Wright Excavation owner on job site">
-      </div>
-      <div class="story-content">
-        <div class="eyebrow">The Guide</div>
-        <h2>Built Around Your Schedule</h2>
-        <p>Wright Excavation was built on a simple belief: a small, focused crew doing one job at a time is more valuable than a big operation spreading itself thin.</p>
-        <p>We've completed 500+ projects across Deschutes, Jefferson, and Crook counties. We still show up like your project is the only one that matters. That means your site is ready on time and your build stays on schedule.</p>
-        <div class="quote-block">"We know what it costs you when excavation runs late. So we don't."</div>
-        <div style="margin-top:32px"><a href="/estimate" class="btn-primary">Request Estimate</a></div>
-      </div>
+    <div class="badge" aria-hidden="true">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
     </div>
+    <div class="hero-eyebrow">Request Received</div>
+    <h1>Thanks — We've<br><span class="accent">Got It From Here.</span></h1>
+    <p class="hero-sub">Your request just landed in our inbox. A member of our team will reach out <strong>within 1 business day</strong> to confirm the details.</p>
   </section>
 
-  <section class="values reveal">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:36px">
-        <div class="eyebrow">What We Stand For</div>
-        <h2 style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,36px);letter-spacing:0.04em;line-height:1.05">Four Things We Never Compromise On</h2>
+  <!-- WHAT'S NEXT -->
+  <section class="next reveal">
+    <div class="next-inner">
+      <div class="next-header">
+        <div class="next-eyebrow">What Happens Next</div>
+        <h2 class="next-title">Here's What to Expect</h2>
       </div>
-      <div class="values-grid">
-        <div class="value-item">
-          <div class="value-title">One Job at a Time</div>
-          <p class="value-body">We don't juggle projects. When we're on your site, we're only on your site. Full attention, no distractions.</p>
+      <div class="next-grid">
+        <div class="next-step">
+          <div class="next-step-num">01</div>
+          <div class="next-step-title">We Review Your Request</div>
+          <p class="next-step-body">Our team reads through your project details and pulls together any clarifying questions.</p>
+          <span class="next-step-time">Within 1 business day</span>
         </div>
-        <div class="value-item">
-          <div class="value-title">Flat-Rate Bids</div>
-          <p class="value-body">No surprise line items. No vague lump sums. You know exactly what you're paying before we break ground.</p>
+        <div class="next-step">
+          <div class="next-step-num">02</div>
+          <div class="next-step-title">We Reach Out</div>
+          <p class="next-step-body">Expect a call or email to confirm scope, timing, and — if needed — schedule a site walk-through.</p>
+          <span class="next-step-time">By phone or email</span>
         </div>
-        <div class="value-item">
-          <div class="value-title">Clear Communication</div>
-          <p class="value-body">You'll always know where your project stands. We pick up the phone and keep you in the loop.</p>
-        </div>
-        <div class="value-item">
-          <div class="value-title">Oregon CCB Licensed</div>
-          <p class="value-body">Fully licensed and insured. General liability. Workers' comp. We show up prepared and protected.</p>
+        <div class="next-step">
+          <div class="next-step-num">03</div>
+          <div class="next-step-title">You Get Your Bid</div>
+          <p class="next-step-body">A flat-rate, itemized estimate lands in your inbox. No vague numbers, no surprises.</p>
+          <span class="next-step-time">3–5 business days</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="stats reveal">
-    <div class="stats-grid">
-      <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Years in Business</div></div>
-      <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Projects Completed</div></div>
-      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Counties Served</div></div>
-      <div class="stat"><div class="stat-num">CCB</div><div class="stat-label">Oregon Licensed</div></div>
-    </div>
-  </section>
-
-  <section class="tools reveal">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:48px">
-        <div class="eyebrow">Precision Tools</div>
-        <h2 style="font-family:var(--font-display);font-size:clamp(32px,4vw,48px);letter-spacing:0.04em;line-height:1.05;margin-bottom:16px">GPS-Guided Grading. Exact Every Time.</h2>
-        <p style="font-size:17px;color:var(--text-mid);max-width:600px;margin:0 auto">We don't eyeball grades. Modern survey-grade equipment means your site hits spec the first pass &mdash; no rework, no delays.</p>
+  <!-- FOLLOW UP -->
+  <section class="followup reveal">
+    <div class="followup-grid">
+      <div class="phone-card">
+        <div class="phone-eyebrow">Need to Talk Sooner?</div>
+        <h3>Give Us a Call</h3>
+        <p>If your project is time-sensitive or you'd rather just talk it through, we're a phone call away.</p>
+        <a href="tel:+15414103633" class="phone-link">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          (541) 410-3633
+        </a>
+        <div class="phone-hours">Mon–Fri · 7am–5pm</div>
       </div>
-      <div class="tools-grid">
-        <div class="tool-card">
-          <div class="tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11s4 9 9 9c0 0 9-3 9-9-1-5-4-9-9-9z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="11" r="3"/></svg></div>
-          <div class="tool-title">GPS Machine Control</div>
-          <p class="tool-body">Real-time satellite positioning on every machine. Grade is accurate to within fractions of an inch &mdash; first pass, every pass.</p>
-        </div>
-        <div class="tool-card">
-          <div class="tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 3v18h18" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 14l4-4 4 4 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="tool-title">Laser Grade Checks</div>
-          <p class="tool-body">Self-leveling rotary lasers verify elevations across the entire site so drainage plans and building pads sit exactly where they belong.</p>
-        </div>
-        <div class="tool-card">
-          <div class="tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18" stroke-linecap="round"/></svg></div>
-          <div class="tool-title">Digital Site Plans</div>
-          <p class="tool-body">We load your engineer's plans straight into our machines. No paper drawings pinned to a windshield &mdash; the data drives the blade.</p>
-        </div>
+
+      <div class="actions-card">
+        <div class="actions-eyebrow">While You're Here</div>
+        <a href="/services" class="action-link">
+          <span>Explore our services</span>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="/about" class="action-link">
+          <span>Meet the team</span>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="/" class="action-link">
+          <span>Back to homepage</span>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="cta reveal">
-    <h2>Ready to Keep Your Build on Schedule?</h2>
-    <p>Submit your project details and get a flat-rate bid within 3–5 business days.</p>
-    <a href="/estimate" class="btn-dark">Request Estimate</a>
-  </section>
-
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -321,6 +326,13 @@
       <span class="footer-credit">Designed by <a href="https://hoffmediadesign.com" target="_blank" rel="noopener noreferrer">Hoffmedia</a></span>
     </div>
   </footer>
-  <script>const obs=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))</script>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>

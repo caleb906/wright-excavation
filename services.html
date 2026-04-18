@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | Wright Excavation</title>
   <meta name="description" content="Site preparation, grading, foundation excavation, trenching, drainage, and haul & dump. Done in-house by Wright Excavation across Central Oregon.">
+  <link rel="canonical" href="https://wrightexcavation.com/services">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -67,14 +68,26 @@
     .cta p{font-size:17px;color:rgba(0,0,0,0.55);max-width:520px;margin:0 auto 32px}
     .btn-dark{display:inline-flex;align-items:center;padding:16px 36px;background:var(--black);color:var(--gold);font-size:16px;font-weight:700;text-decoration:none;border-radius:999px;transition:background-color 0.2s ease,transform 0.2s var(--ease),box-shadow 0.2s ease;box-shadow:0 4px 20px rgba(0,0,0,0.3)}.btn-dark:hover{background:#1a1a1d;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.4)}
 
-    /* FOOTER */
-    .footer{padding:40px 24px;border-top:1px solid var(--border)}
-    .footer-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
-    .footer-left{display:flex;align-items:center;gap:12px}
-    .footer-logo{height:28px;opacity:0.5}
-    .footer-copy{font-size:11px;color:var(--text-ghost)}
-    .footer-links{display:flex;gap:20px}
-    .footer-link{font-size:12px;color:var(--text-dim);text-decoration:none;transition:color 0.15s ease}.footer-link:hover{color:var(--text)}
+    /* ---- FOOTER ---- */
+    .footer{padding:72px 24px 28px;border-top:1px solid var(--border);background:var(--surface);position:relative;z-index:1}
+    .footer-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:64px;padding-bottom:32px;border-bottom:1px solid var(--border)}
+    .footer-brand{max-width:380px}
+    .footer-logo{height:120px;width:auto;opacity:0.95;display:block;margin-bottom:20px}
+    .footer-tagline{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:20px}
+    .footer-phone{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--text);text-decoration:none;transition:color 0.15s ease}
+    .footer-phone:hover{color:var(--gold)}
+    .footer-phone svg{color:var(--gold)}
+    .footer-nav-wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+    .footer-section{display:flex;flex-direction:column;gap:10px}
+    .footer-heading{font-family:var(--font-display);font-size:14px;letter-spacing:0.08em;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+    .footer-link{font-size:14px;color:var(--text-dim);text-decoration:none;transition:color 0.15s ease}
+    .footer-link:hover{color:var(--text)}
+    .footer-bar{max-width:1140px;margin:0 auto;padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .footer-copy{font-size:12px;color:var(--text-ghost)}
+    .footer-credit{font-size:12px;color:var(--text-dim)}
+    .footer-credit a{color:var(--gold);text-decoration:none;font-weight:600;transition:color 0.15s ease}
+    .footer-credit a:hover{color:var(--text)}
+    @media(max-width:768px){.footer{padding:56px 24px 24px}.footer-inner{grid-template-columns:1fr;gap:40px}.footer-nav-wrap{grid-template-columns:1fr 1fr;gap:24px}.footer-bar{flex-direction:column;text-align:center;gap:8px}}
   /* ---- BURGER ---- */
     .nav-burger{width:48px;height:48px;display:none;align-items:center;justify-content:center;background:transparent;border:none;cursor:pointer;color:var(--text);padding:0;position:relative}
     .nav-burger-bars{display:flex;flex-direction:column;gap:5px}
@@ -128,10 +141,10 @@
     .menu-hours{margin-top:4px;text-align:center;font-size:12px;color:var(--text-dim);letter-spacing:0.02em}
     body.menu-open{overflow:hidden}
     @media(max-width:900px){
-      .nav{width:calc(100% - 24px);top:12px;padding:0 16px;height:72px;border-radius:16px}
-      .nav-logo{height:56px}
-      .nav-links,.nav-phone,.nav-cta{display:none}
-      .nav-burger{display:inline-flex}
+      .nav{width:calc(100% - 24px);top:12px;padding:16px;min-height:140px;height:auto;border-radius:16px;justify-content:center}
+      .nav-logo{height:120px}
+      .nav-links,.nav-phone,.nav-cta,.nav-actions{display:none}
+      .nav-burger{display:inline-flex;position:absolute;right:12px;top:50%;transform:translateY(-50%)}
     }
   </style>
 </head>
@@ -167,9 +180,9 @@
       <a href="/contact" class="menu-link"><span class="menu-link-num">04</span>Contact<span class="menu-link-arrow"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </nav>
     <div class="menu-footer">
-      <a href="tel:+15415550100" class="menu-phone">
+      <a href="tel:+15414103633" class="menu-phone">
         <span class="menu-phone-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span class="menu-phone-text"><span class="menu-phone-label">Call us direct</span><span class="menu-phone-number">(541) 555-0100</span></span>
+        <span class="menu-phone-text"><span class="menu-phone-label">Call us direct</span><span class="menu-phone-number">(541) 410-3633</span></span>
       </a>
       <a href="/estimate" class="menu-cta">Request Estimate<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <div class="menu-hours">Mon–Fri · 7am–5pm</div>
@@ -257,13 +270,30 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-left">
+      <div class="footer-brand">
         <img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/699504ed2529fa33566c3560_2.png" alt="Wright Excavation" class="footer-logo">
-        <span class="footer-copy">&copy; 2026 Wright Excavation. All rights reserved.</span>
+        <p class="footer-tagline">Focused excavation for Central Oregon builders. One crew, one job at a time &mdash; done right, on schedule.</p>
+        <a href="tel:+15414103633" class="footer-phone"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>(541) 410-3633</a>
       </div>
-      <nav class="footer-links">
-        <a href="/" class="footer-link">Home</a><a href="/services" class="footer-link">Services</a><a href="/about" class="footer-link">About</a><a href="/contact" class="footer-link">Contact</a><a href="/privacy" class="footer-link">Privacy</a>
-      </nav>
+      <div class="footer-nav-wrap">
+        <div class="footer-section">
+          <div class="footer-heading">Company</div>
+          <a href="/" class="footer-link">Home</a>
+          <a href="/about" class="footer-link">About</a>
+          <a href="/services" class="footer-link">Services</a>
+          <a href="/contact" class="footer-link">Contact</a>
+        </div>
+        <div class="footer-section">
+          <div class="footer-heading">Get Started</div>
+          <a href="/estimate" class="footer-link">Request Estimate</a>
+          <a href="/privacy" class="footer-link">Privacy</a>
+          <a href="mailto:hello@wrightexcavation.com" class="footer-link">hello@wrightexcavation.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span class="footer-copy">&copy; 2026 Wright Excavation. All rights reserved.</span>
+      <span class="footer-credit">Designed by <a href="https://hoffmediadesign.com" target="_blank" rel="noopener noreferrer">Hoffmedia</a></span>
     </div>
   </footer>
   <script>const obs=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))</script>
