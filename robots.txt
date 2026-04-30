@@ -3,4 +3,4 @@ Allow: /
 Disallow: /thank-you
 Disallow: /privacy
 
-Sitemap: https://wrightexcavation.com/sitemap.xml
+Sitemap: https://wrightexcavationusa.com/sitemap.xml

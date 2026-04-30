@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import { exec } from 'child_process';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 const ISSUES_FILE = path.join(__dirname, 'dev-issues.json');
 
 const mimeTypes = {
