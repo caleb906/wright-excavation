@@ -456,7 +456,15 @@
     .menu-cta svg{width:18px;height:18px;stroke-width:2.5}
     .menu-hours{margin-top:4px;text-align:center;font-size:12px;color:var(--text-dim);letter-spacing:0.02em}
     body.menu-open{overflow:hidden}
-    @media(max-width:900px){
+    @media(max-width:1024px) and (min-width:769px){
+      .nav{width:calc(100% - 32px);padding:0 16px;height:96px}
+      .nav-logo{height:80px}
+      .nav-link{font-size:14px;padding:10px 12px}
+      .nav-actions{gap:12px}
+      .nav-phone{display:none}
+      .nav-cta{padding:11px 18px;font-size:14px}
+    }
+    @media(max-width:768px){
       .nav{width:calc(100% - 24px);top:12px;padding:16px;min-height:140px;height:auto;border-radius:16px;justify-content:center}
       .nav-logo{height:120px}
       .nav-links,.nav-phone,.nav-cta,.nav-actions{display:none}
@@ -599,10 +607,14 @@
             <textarea id="notes" name="notes" rows="5" placeholder="Describe your project. Lot size, scope of work, access conditions, timeline constraints..."></textarea>
           </div>
           <div class="form-full">
+            <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
+          </div>
+          <div class="form-full">
             <button type="submit" class="submit-btn">Submit Request</button>
           </div>
         </div>
       </form>
+      <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 
       <p class="form-legal">By submitting, you agree to our <a href="/privacy">Privacy Policy</a>. We respond within 1 business day.</p>
     </div>
