@@ -7,6 +7,16 @@ temporary screenshots/
 .env
 .env.local
 
+# Credentials — never commit
+*-service-account*.json
+*-credentials*.json
+*service-account*.json
+hoffmedia-*.json
+ga4-*.json
+gcp-*.json
+*.pem
+*.key
+
 .vercel
 screencapture-*
 Brand Assets/

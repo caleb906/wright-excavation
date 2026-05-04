@@ -4,13 +4,12 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const LOGO = 'https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/699504ed2529fa33566c3560_2.png';
+const LOGO = 'https://wrightexcavationusa.com/images/logo.png';
 
 const faviconHTML = (size) => `<!DOCTYPE html><html><head><style>
-html,body{margin:0;padding:0;width:${size}px;height:${size}px;background:#0A0A0C;display:flex;align-items:center;justify-content:center}
-img{width:${Math.floor(size*0.78)}px;height:${Math.floor(size*0.78)}px;object-fit:contain;filter:drop-shadow(0 0 0 #D4A017)}
-.frame{width:100%;height:100%;background:linear-gradient(135deg,#0A0A0C 0%,#18181B 100%);display:flex;align-items:center;justify-content:center;border-radius:${Math.floor(size*0.18)}px}
-</style></head><body><div class="frame"><img src="${LOGO}"></div></body></html>`;
+html,body{margin:0;padding:0;width:${size}px;height:${size}px;background:transparent;display:flex;align-items:center;justify-content:center}
+img{width:${size}px;height:${size}px;object-fit:contain;display:block}
+</style></head><body><img src="${LOGO}"></body></html>`;
 
 const ogHTML = `<!DOCTYPE html><html><head>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -65,7 +64,7 @@ html,body{width:1200px;height:630px;font-family:'DM Sans',sans-serif;background:
     await page.setViewport({ width: size, height: size, deviceScaleFactor: 1 });
     await page.setContent(faviconHTML(size), { waitUntil: 'networkidle0' });
     const out = size === 32 ? 'favicon-32.png' : size === 180 ? 'apple-touch-icon.png' : 'icon-512.png';
-    await page.screenshot({ path: out, omitBackground: false });
+    await page.screenshot({ path: out, omitBackground: true });
     console.log('wrote', out);
     await page.close();
   }
@@ -75,7 +74,17 @@ html,body{width:1200px;height:630px;font-family:'DM Sans',sans-serif;background:
   await og.setViewport({ width: 1200, height: 630, deviceScaleFactor: 1 });
   await og.setContent(ogHTML, { waitUntil: 'networkidle0' });
   await new Promise(r => setTimeout(r, 600));
-  await og.screenshot({ path: 'og-image.png' });
-  console.log('wrote og-image.png');
+  const ogBuf = await og.screenshot({ type: 'png' });
+  try {
+    const sharp = (await import('sharp')).default;
+    const optimized = await sharp(ogBuf)
+      .png({ compressionLevel: 9, palette: true, quality: 80, colors: 128, effort: 10 })
+      .toBuffer();
+    fs.writeFileSync('og-image.png', optimized);
+    console.log(`wrote og-image.png (${optimized.length} bytes, optimized)`);
+  } catch {
+    fs.writeFileSync('og-image.png', ogBuf);
+    console.log(`wrote og-image.png (${ogBuf.length} bytes, install 'sharp' to optimize)`);
+  }
   await browser.close();
 })();

@@ -5,6 +5,26 @@
  */
 (function () {
   var GA_ID = 'G-2G7R6CJZJB';
+  var CLARITY_ID = 'wlwwfxqoi1';
+
+  // --- Filter dev / internal traffic before any GA call fires ---
+  var host = location.hostname;
+  var isDev =
+    host === 'localhost' ||
+    host === '127.0.0.1' ||
+    host === '0.0.0.0' ||
+    host.endsWith('.local') ||
+    host.endsWith('.vercel.app') ||      // preview deployments
+    location.protocol === 'file:' ||
+    /[?&](debug_analytics|no_ga)=1/.test(location.search) || // manual override: ?no_ga=1
+    window.localStorage.getItem('hoffmedia_no_ga') === '1';  // persistent opt-out per browser
+
+  if (isDev) {
+    // Stub gtag so any event calls in the page silently no-op
+    window.gtag = function () {};
+    if (window.console) console.info('[analytics] disabled on', host);
+    return;
+  }
 
   // Load gtag.js
   var s = document.createElement('script');
@@ -15,7 +35,18 @@
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () { window.dataLayer.push(arguments); };
   gtag('js', new Date());
-  gtag('config', GA_ID);
+  gtag('config', GA_ID, {
+    // Mark this traffic so GA can segment/filter it later if you set up a
+    // matching Internal Traffic rule in Admin → Data Streams → Configure tag settings
+    traffic_type: 'external'
+  });
+
+  // Microsoft Clarity
+  (function (c, l, a, r, i, t, y) {
+    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+    t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, 'clarity', 'script', CLARITY_ID);
 
   // Thank-you page = form submit success (Web3Forms redirects here)
   if (/thank[-_]?you/i.test(location.pathname)) {

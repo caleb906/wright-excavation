@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="sAdlZeg6bkoTZFk-qtTMtZoMzvGTxR76zEebzCeOWHE">
   <!-- Analytics (centralized — see /analytics.js) -->
   <script src="/analytics.js"></script>
   <title>Wright Excavation | Central Oregon Excavation Contractor</title>
@@ -104,7 +105,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0; z-index: -2;
-      background: url('https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08daad8390f6e3632d6_DSCF0003.jpg') center/cover no-repeat;
+      background: url('/images/site-prep.jpg') center/cover no-repeat;
     }
     .hero-overlay {
       position: absolute; inset: 0; z-index: -1;
@@ -336,7 +337,15 @@
     .menu-cta svg{width:18px;height:18px;stroke-width:2.5}
     .menu-hours{margin-top:4px;text-align:center;font-size:12px;color:var(--text-dim);letter-spacing:0.02em}
     body.menu-open{overflow:hidden}
-    @media(max-width:900px){
+    @media(max-width:1024px) and (min-width:769px){
+      .nav{width:calc(100% - 32px);padding:0 16px;height:96px}
+      .nav-logo{height:80px}
+      .nav-link{font-size:14px;padding:10px 12px}
+      .nav-actions{gap:12px}
+      .nav-phone{display:none}
+      .nav-cta{padding:11px 18px;font-size:14px}
+    }
+    @media(max-width:768px){
       .nav{width:calc(100% - 24px);top:12px;padding:16px;min-height:140px;height:auto;border-radius:16px;justify-content:center}
       .nav-logo{height:120px}
       .nav-links,.nav-phone,.nav-cta,.nav-actions{display:none}
@@ -350,7 +359,7 @@
 
   <!-- NAV -->
   <nav class="nav">
-    <a href="/"><img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/699504ed2529fa33566c3560_2.png" alt="Wright Excavation logo" class="nav-logo"></a>
+    <a href="/"><img src="/images/logo.png" alt="Wright Excavation logo" class="nav-logo"></a>
     <div class="nav-links">
       <a href="/" class="nav-link active">Home</a>
       <a href="/services" class="nav-link">Services</a>
@@ -367,7 +376,7 @@
   <!-- MOBILE MENU -->
   <div class="menu" id="mobileMenu">
     <div class="menu-top">
-      <a href="/"><img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/699504ed2529fa33566c3560_2.png" alt="Wright Excavation" class="menu-logo"></a>
+      <a href="/"><img src="/images/logo.png" alt="Wright Excavation" class="menu-logo"></a>
       <button class="menu-close" aria-label="Close menu" onclick="closeMenu()"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg></button>
     </div>
     <nav class="menu-nav">
@@ -429,7 +438,7 @@
   <section class="guide reveal">
     <div class="guide-grid">
       <div class="guide-img">
-        <img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08d5110bab806592979_DSCF0021.jpg" alt="Wright Excavation owner on job site">
+        <img src="/images/owner-jobsite.jpg" alt="Wright Excavation owner on job site">
       </div>
       <div class="guide-content">
         <div class="eyebrow">The Guide</div>
@@ -478,21 +487,21 @@
       </div>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-card-img"><img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08daad8390f6e3632d6_DSCF0003.jpg" alt="Site preparation and land clearing"></div>
+          <div class="service-card-img"><img src="/images/site-prep.jpg" alt="Site preparation and land clearing"></div>
           <div class="service-card-body">
             <div class="service-card-title">Site Preparation</div>
             <p class="service-card-desc">Clearing, leveling, and prepping your lot. Your project starts clean and on schedule.</p>
           </div>
         </div>
         <div class="service-card">
-          <div class="service-card-img"><img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08ebaa2b4dabc01046e_DSCF0034.jpg" alt="Precision grading and leveling"></div>
+          <div class="service-card-img"><img src="/images/grading.jpg" alt="Precision grading and leveling"></div>
           <div class="service-card-body">
             <div class="service-card-title">Grading & Leveling</div>
             <p class="service-card-desc">Precise grading for proper drainage and a stable foundation. No rework needed.</p>
           </div>
         </div>
         <div class="service-card">
-          <div class="service-card-img"><img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08d068ca8ea5b86b1f3_DSCF0076.jpg" alt="Foundation excavation for builds"></div>
+          <div class="service-card-img"><img src="/images/foundation.jpg" alt="Foundation excavation for builds"></div>
           <div class="service-card-body">
             <div class="service-card-title">Foundation Excavation</div>
             <p class="service-card-desc">Clean, accurate foundation digging. The right start for a smooth build.</p>
@@ -521,7 +530,7 @@
         </div>
       </div>
       <div class="area-img">
-        <img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08dfb7dc180c2e4d472_DSCF0079.jpg" alt="Central Oregon landscape">
+        <img src="/images/landscape.jpg" alt="Central Oregon landscape">
       </div>
     </div>
   </section>
@@ -571,7 +580,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="/" class="footer-logo-link" aria-label="Wright Excavation home">
-          <img src="https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/699504ed2529fa33566c3560_2.png" alt="Wright Excavation" class="footer-logo">
+          <img src="/images/logo.png" alt="Wright Excavation" class="footer-logo">
         </a>
         <p class="footer-tagline">Focused excavation for Central Oregon builders. One crew, one job at a time &mdash; done right, on schedule.</p>
         <a href="tel:+15414103633" class="footer-phone"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>(541) 410-3633</a>
@@ -634,8 +643,8 @@
     "url": "https://wrightexcavationusa.com/",
     "telephone": "+1-541-410-3633",
     "email": "info@wrightexcavationusa.com",
-    "image": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/699504ed2529fa33566c3560_2.png",
-    "logo": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/699504ed2529fa33566c3560_2.png",
+    "image": "/images/logo.png",
+    "logo": "/images/logo.png",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",

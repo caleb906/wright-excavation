@@ -11,7 +11,7 @@
     "hours": "Mon–Fri, 7am–5pm"
   },
   "brand": {
-    "logo": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/699504ed2529fa33566c3560_2.png",
+    "logo": "/images/logo.png",
     "colors": {
       "gold": "#D4A017",
       "goldDark": "#B8880F",
@@ -48,7 +48,7 @@
           "subheading": "Wright Excavation works directly with builders and developers across Central Oregon. Focused crews, realistic timelines, no surprises.",
           "primaryCTA": { "label": "Request Estimate", "url": "/estimate" },
           "secondaryCTA": { "label": "See Our Services", "url": "/services" },
-          "backgroundImage": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08daad8390f6e3632d6_DSCF0003.jpg",
+          "backgroundImage": "/images/site-prep.jpg",
           "stats": [
             { "value": "15+", "label": "Years Experience" },
             { "value": "500+", "label": "Projects Completed" },
@@ -69,7 +69,7 @@
           "heading": "A Different Kind of Excavation Company",
           "body": "Most excavators juggle four jobs at once and hope for the best. We run a small, focused crew by design. One project at a time gets our full attention.",
           "quote": "We know what it costs you when excavation runs late. So we don't.",
-          "image": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08d5110bab806592979_DSCF0021.jpg",
+          "image": "/images/owner-jobsite.jpg",
           "cta": { "label": "Request Estimate", "url": "/estimate" }
         },
         {
@@ -93,17 +93,17 @@
             {
               "title": "Site Preparation",
               "body": "Clearing, leveling, and prepping your lot. Your project starts clean and on schedule.",
-              "image": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08daad8390f6e3632d6_DSCF0003.jpg"
+              "image": "/images/site-prep.jpg"
             },
             {
               "title": "Grading & Leveling",
               "body": "Precise grading for proper drainage and a stable foundation. No rework needed.",
-              "image": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08ebaa2b4dabc01046e_DSCF0034.jpg"
+              "image": "/images/grading.jpg"
             },
             {
               "title": "Foundation Excavation",
               "body": "Clean, accurate foundation digging. The right start for a smooth build.",
-              "image": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08d068ca8ea5b86b1f3_DSCF0076.jpg"
+              "image": "/images/foundation.jpg"
             }
           ]
         },
@@ -114,7 +114,7 @@
           "heading": "Proudly Serving Central Oregon",
           "body": "Based in Bend, we run crews across Deschutes, Jefferson, and Crook counties. If you're within 60 miles of Bend, we can get to you.",
           "tags": ["Bend", "Redmond", "Sisters", "Prineville", "Sunriver", "La Pine", "Madras", "Terrebonne"],
-          "image": "https://cdn.prod.website-files.com/689d83f5d16d2f6bbd9b510a/69dbc08dfb7dc180c2e4d472_DSCF0079.jpg"
+          "image": "/images/landscape.jpg"
         },
         {
           "type": "faq",
